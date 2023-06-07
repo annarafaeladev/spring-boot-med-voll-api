@@ -27,7 +27,7 @@ public class PacienteController {
 
     @GetMapping
     public Page<PacienteDto> index(@PageableDefault(size = 2, sort = {"nome"}) Pageable pagination){
-        return pacienteRepository.findAll(pagination).map(PacienteDto::new);
+        return pacienteRepository.findByAtivoTrue(pagination).map(PacienteDto::new);
     }
 
     @PutMapping("/{id}")
