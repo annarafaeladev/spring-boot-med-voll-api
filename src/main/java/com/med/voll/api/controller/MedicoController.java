@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,7 +30,7 @@ public class MedicoController {
     }
 
     @GetMapping
-    public Page<ListarMedicoDto> index(Pageable pagination){
+    public Page<ListarMedicoDto> index(@PageableDefault(size = 2, sort = {"nome"}) Pageable pagination){
         return medicoRepository.findAll(pagination).map(ListarMedicoDto::new);
     }
 }
