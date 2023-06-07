@@ -2,6 +2,7 @@ package com.med.voll.api.paciente;
 
 import com.med.voll.api.endereco.DadosEndereco;
 import com.med.voll.api.endereco.Endereco;
+import com.med.voll.api.medico.DadosUpdateMedicoDto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -39,5 +40,17 @@ public class Paciente {
         this.telefone = paciente.telefone();
         this.cpf = paciente.cpf();
         this.endereco = new Endereco(paciente.endereco());
+    }
+
+    public void update(DadosUpdatePacienteDto updatePaciente){
+        if (updatePaciente.nome() != null)
+            this.nome = updatePaciente.nome();
+
+        if (updatePaciente.telefone() != null)
+            this.telefone = updatePaciente.telefone();
+
+        if (updatePaciente.endereco() != null)
+            this.endereco.update(updatePaciente.endereco());
+
     }
 }
