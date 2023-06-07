@@ -30,7 +30,7 @@ public class MedicoController {
 
     @GetMapping
     public Page<MedicoDto> index(@PageableDefault(size = 2, sort = {"nome"}) Pageable pagination){
-        return medicoRepository.findAll(pagination).map(MedicoDto::new);
+        return medicoRepository.findAllByAtivoTrue(pagination).map(MedicoDto::new);
     }
     @PutMapping("/{id}")
     @Transactional
@@ -43,7 +43,8 @@ public class MedicoController {
     @Transactional
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id){
-        medicoRepository.deleteById(id);
+        Medico medico  = medicoRepository.getReferenceById(id);
+        medico.destroyLogic(id);
 
     }
 
