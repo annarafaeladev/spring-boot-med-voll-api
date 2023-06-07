@@ -33,8 +33,10 @@ public class Paciente {
     @Embedded
     private  Endereco endereco;
 
+    private Boolean ativo;
 
     public Paciente(DadosCadastroPaciente paciente) {
+        this.ativo = true;
         this.nome = paciente.nome();
         this.email = paciente.email();
         this.telefone = paciente.telefone();
@@ -52,5 +54,9 @@ public class Paciente {
         if (updatePaciente.endereco() != null)
             this.endereco.update(updatePaciente.endereco());
 
+    }
+
+    public void destroyLogic(Long id) {
+        this.ativo=false;
     }
 }

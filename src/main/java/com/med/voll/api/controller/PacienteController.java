@@ -1,11 +1,13 @@
 package com.med.voll.api.controller;
 
+import com.med.voll.api.medico.Medico;
 import com.med.voll.api.paciente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,5 +37,16 @@ public class PacienteController {
         Paciente paciente = pacienteRepository.getReferenceById(id);
         paciente.update(data);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable Long id){
+        Paciente paciente  = pacienteRepository.getReferenceById(id);
+        paciente.destroyLogic(id);
+
+    }
+
+
 
 }
