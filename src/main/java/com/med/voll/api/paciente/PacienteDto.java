@@ -1,8 +1,8 @@
 package com.med.voll.api.paciente;
 
-public record ListarPacienteDto(String nome, String email, String telefone, String cpf) {
+public record PacienteDto(String nome, String email, String telefone, String cpf) {
 
-    public ListarPacienteDto(Paciente paciente){
+    public PacienteDto(Paciente paciente){
         this(paciente.getNome(), paciente.getEmail(), paciente.getTelefone(), paciente.getCpf());
     }
 }

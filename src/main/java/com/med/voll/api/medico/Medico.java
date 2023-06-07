@@ -3,10 +3,7 @@ package com.med.voll.api.medico;
 import com.med.voll.api.endereco.Endereco;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
@@ -39,5 +36,17 @@ public class Medico {
         this.crm = data.crm();
         this.especialidade = data.especialidade();
         this.endereco = new Endereco(data.endereco());
+    }
+
+    public void update(DadosUpdateMedicoDto updateMedico){
+        if (updateMedico.nome() != null)
+            this.nome = updateMedico.nome();
+
+        if (updateMedico.telefone() != null)
+            this.telefone = updateMedico.telefone();
+
+        if (updateMedico.endereco() != null)
+            this.endereco.update(updateMedico.endereco());
+
     }
 }
