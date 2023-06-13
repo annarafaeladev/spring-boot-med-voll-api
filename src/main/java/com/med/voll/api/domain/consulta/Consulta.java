@@ -1,7 +1,7 @@
-package com.med.voll.api.consulta;
+package com.med.voll.api.domain.consulta;
 
-import com.med.voll.api.medico.Medico;
-import com.med.voll.api.paciente.Paciente;
+import com.med.voll.api.domain.medico.Medico;
+import com.med.voll.api.domain.paciente.Paciente;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

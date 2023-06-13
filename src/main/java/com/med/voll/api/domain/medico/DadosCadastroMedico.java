@@ -1,9 +1,8 @@
-package com.med.voll.api.medico;
+package com.med.voll.api.domain.medico;
 
-import com.med.voll.api.endereco.DadosEndereco;
+import com.med.voll.api.domain.endereco.DadosEndereco;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
-import org.springframework.validation.annotation.Validated;
 
 public record DadosCadastroMedico(
         @NotNull

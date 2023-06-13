@@ -1,8 +1,6 @@
-package com.med.voll.api.paciente;
+package com.med.voll.api.domain.paciente;
 
-import com.med.voll.api.endereco.DadosEndereco;
-import com.med.voll.api.endereco.Endereco;
-import com.med.voll.api.medico.DadosUpdateMedicoDto;
+import com.med.voll.api.domain.endereco.Endereco;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;

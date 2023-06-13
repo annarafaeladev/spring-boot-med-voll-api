@@ -1,7 +1,7 @@
 package com.med.voll.api.controller;
 
-import com.med.voll.api.consulta.DadosAgendamentoConsultaDto;
-import com.med.voll.api.consulta.DadosDetalhamentoConsulta;
+import com.med.voll.api.domain.consulta.DadosAgendamentoConsultaDto;
+import com.med.voll.api.domain.consulta.DadosDetalhamentoConsulta;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
