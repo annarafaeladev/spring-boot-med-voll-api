@@ -1,7 +1,5 @@
 package com.med.voll.api.controller;
 
-import com.med.voll.api.medico.Medico;
-import com.med.voll.api.medico.MedicoDto;
 import com.med.voll.api.paciente.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
