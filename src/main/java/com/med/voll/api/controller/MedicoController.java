@@ -59,7 +59,6 @@ public class MedicoController {
     }
 
     @GetMapping("/{id}")
-    @Transactional
     public ResponseEntity show(@PathVariable Long id){
         Medico medico  = medicoRepository.getReferenceById(id);
 
